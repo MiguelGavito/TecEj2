@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from '../../public/outerwildsLogo.png'
-
+import Logo from '../../public/outerwildsLogo.png'
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
         {/*imagen*/}
         <div>
           <Image
-            src={logo}
+            src={Logo}
             alt="Logo"
             height={50}
           />
@@ -19,14 +18,14 @@ export default function Home() {
         {/*paginas*/}
         <div className="space-x-20 justify-right">
           <Link href="/">Home</Link>
-          <Link href="/page1">Page 1</Link>
+          <Link href="/">Page 1</Link>
           <Link href="/">Page 2</Link>
         </div>
       </div>
       
       {/*Bienvenida*/}
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-        Welcome
+        Pagina 2
       </div>
     </div>
   )
