@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from '../../public/outerwildsLogo.png'
+import Logo from "../../../public/next.svg"; 
 
 
 export default function Navigation() {
@@ -8,33 +8,37 @@ export default function Navigation() {
     <nav className="w-full px-8 py-4 flex items-center justify-between bg-blue-600 shadow-sm">
         <div className="flex items-center gap-8">
         {/*navbar*/}
-        <div className="space-x-9 flex items-center justify-center bg-green-900 justify-self-auto">
             {/*imagen*/}
             <Link href={'/'}>
                 <Image
-                    src={logo}
+                    src={Logo}
                     alt="Logo"
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-md"
+                    width={100}
+                    height={24}
+                    className="invert"
                 />
-                
             </Link>
-            <div>
             
+            <div className="flex gap-6">
+                <Link href="/" className="text-white hover:text-gray-200">
+                    Home
+                </Link>
+                <Link href="/page1" className="text-white hover:text-gray-200">
+                    Page 1
+                </Link>
+                <Link href="/page2" className="text-white hover:text-gray-200">
+                    Page 2
+                </Link>
+                <Link href="/page3" className="text-white hover:text-gray-200">
+                    Page 3
+                </Link>
+                <Link href="/counter" className="text-white hover:text-gray-200">
+                    Counter
+                </Link>
+                <Link href="/signup" className="text-white hover:text-gray-200">
+                    Sign up
+                </Link>
             </div>
-            {/*paginas*/}
-            <div className="space-x-20 justify-right">
-            <Link href="/">Home</Link>
-            <Link href="/page1">Page 1</Link>
-            <Link href="/">Page 2</Link>
-            </div>
-        </div>
-        
-        {/*Bienvenida*/}
-        <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-            Welcome
-        </div>
         </div>
     </nav>
   )

@@ -1,33 +1,25 @@
-import Link from "next/link";
 import Image from "next/image";
-import logo from '../../public/outerwildsLogo.png'
+import Navigation from "./components/Navigation";
+import Logo from "../../public/next.svg";
 
 
 export default function Home() {
   return (
-    <div>
-      {/*navbar*/}
-      <div className="space-x-9 flex items-center justify-center bg-green-900 justify-self-auto">
-        {/*imagen*/}
-        <div>
-          <Image
-            src={logo}
-            alt="Logo"
-            height={50}
-          />
-        </div>
-        {/*paginas*/}
-        <div className="space-x-20 justify-right">
-          <Link href="/">Home</Link>
-          <Link href="/page1">Page 1</Link>
-          <Link href="/">Page 2</Link>
-        </div>
+    <main className="flex min-h-[calc(100vh-73px)] flex-col items-center justify-center p-8">
+      <div className="flex flex-col items-center gap-8">
+
+        
+        <Image
+          src={Logo}
+          alt="Logo"
+          width={600}
+          height={400}
+          className="rounded-lg shadow-lg"
+        />
+        <button className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+          Get Started
+        </button>
       </div>
-      
-      {/*Bienvenida*/}
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-        Welcome
-      </div>
-    </div>
+    </main> 
   )
 }
