@@ -1,9 +1,13 @@
+'use client';
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../public/next.svg"; 
+import Logo from "../../../public/outerwildsLogo.png"; 
+import { useUser } from "../context/UserContext";
 
 
 export default function Navigation() {
+
+    const { user } = useUser();
   return (
     <nav className="w-full px-8 py-4 flex items-center justify-between bg-blue-600 shadow-sm">
         <div className="flex items-center gap-8">
@@ -13,7 +17,7 @@ export default function Navigation() {
                 <Image
                     src={Logo}
                     alt="Logo"
-                    width={100}
+                    width={48}
                     height={24}
                     className="invert"
                 />
@@ -39,6 +43,21 @@ export default function Navigation() {
                     Sign up
                 </Link>
             </div>
+        </div>
+        <div className="text-white">
+            {user ? (
+                <span>Welcome, {user.name} </span>
+            ) : (
+                <Link href="/signup" className="text-white hover:text-gray-200">
+                    Sign up
+                </Link>
+            )}
+        
+            {user?.email.endsWith("gmail.com") && (
+                <Link href="/gmail" className="text-white hover:text-gray-200">
+                    Gmail
+                </Link>
+            )}
         </div>
     </nav>
   )
